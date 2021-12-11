@@ -1,7 +1,7 @@
 package com.example.carrace;
 
 // values:
-// cleanPath = 0, rock = 1, car = 2, explotion = 3
+// cleanPath = 0, rock = 1, car = 2, explotion = 3, coin = 4
 
 
 import java.util.Arrays;
@@ -26,7 +26,7 @@ public class CarGame {
         lives = livesNumber;
         vals = new int[rows][cols];
         speed = speedValue;
-        carPosition = 1;
+        carPosition = 2;
         gameIsOn = true;
 
         for (int i = 0; i < vals.length ; i++) {
@@ -38,16 +38,19 @@ public class CarGame {
         changeCarPosition(checkForCrach());
     }
 
-    public int next() {
-        int result = 0; // gameIsOn = 0, crash = 1, gameIsOf = 2
+    public int next(int counter) {
+        int result = 0; // gameIsOn = 0, crash = 1, gameIsOf = 2, hit coin = 3
         if(gameIsOn){
-            generateNewPath(CheckIfRowIsClear(vals[0]));
+            generateNewPath(CheckIfRowIsClear(vals[0]),counter);
+            boolean hitCoin = checkForCoin();
             boolean crash =  checkForCrach();
             changeCarPosition(crash);
             if(crash){
                 lives--;
                 checkforGamestatus();
                 result = 1;
+            } else if(hitCoin){
+                result = 3;
             }
         }else{
             result = 2;
@@ -72,7 +75,7 @@ public class CarGame {
         }
         return result;
     }
-    private void generateNewPath(boolean withObstacles) {
+    private void generateNewPath(boolean withObstacles, int counter) {
         int rows = vals.length;
         int cols = vals[0].length;
         int[][] tempVals = new int[rows][cols];
@@ -82,11 +85,16 @@ public class CarGame {
                     //generate clean path
                     for (int j = 0; j < cols; j++) {
                         vals[i][j] = 0;
+
                     }
                     // insert obstacle if needed
                     if(withObstacles) {
-                        int random = new Random().nextInt(cols);
-                        vals[i][random] = 1;
+                        int randomObs = new Random().nextInt(cols);
+                        vals[i][randomObs] = 1;
+                        if(counter%5==0){
+                            int randomCoin = new Random().nextInt(cols);
+                            vals[i][randomCoin] = 4;
+                        }
                     }
 
                 }else {
@@ -99,7 +107,13 @@ public class CarGame {
 
     private boolean checkForCrach() {
         boolean result = false;
-        if(vals[3][carPosition]==1)
+        if(vals[vals.length-1][carPosition]==1)
+            result = true;
+        return result;
+    }
+    private boolean checkForCoin() {
+        boolean result = false;
+        if(vals[vals.length-1][carPosition]==4)
             result = true;
         return result;
     }

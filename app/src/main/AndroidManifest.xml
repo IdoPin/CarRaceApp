@@ -2,21 +2,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.carrace">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.CarRace">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCja7ALMoUO0wg5qxnYVa6ZZNDcCECPc0A" />
+
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activity_Scores"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Activity_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Activity_game"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Activity_Over"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Activity_Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

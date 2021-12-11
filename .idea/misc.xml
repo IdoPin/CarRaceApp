@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/drawable/ic_launcher_background.xml" value="0.221875" />
         <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/drawable/round_button.xml" value="0.3117948717948718" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/activity_game.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/activity_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/activity_over.xml" value="0.264" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/activity_scores.xml" value="0.264" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/activity_splash.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/fragment_list.xml" value="0.264" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/layout/fragment_map.xml" value="0.2171875" />
+        <entry key="..\:/Users/idopi/Desktop/Yesumei_Cellolar/Apps/CarRace/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.221875" />
       </map>
     </option>
   </component>
